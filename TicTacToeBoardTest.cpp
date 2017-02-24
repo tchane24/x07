@@ -18,3 +18,23 @@ TEST(TicTacToeBoardTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
+
+TEST(TicTacToeBoardTest, TogglesCorrectly)
+{
+	TicTacToeBoard t;
+	//Placed toggleTurn() in placePiece()
+	ASSERT_EQ(t.placePiece(1,2), O);
+}
+
+TEST(TicTacToeBoardTest, BoardIsClear)
+{
+	TicTacToeBoard t;
+	t.clearBoard();
+	ASSERT_EQ(t.getPiece(0,0) , Blank);
+}
+TEST(TicTacToeBoardTest, BoardIsClearBug)
+{
+	TicTacToeBoard t;
+	t.clearBoard();
+	ASSERT_EQ(t.getPiece(1,1) , Blank);
+}
